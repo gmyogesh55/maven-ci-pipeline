@@ -1,0 +1,10 @@
+---
+- name: Program 8 - Deploy Maven Artifact using Ansible
+  hosts: local
+  become: false
+  tasks:
+    - name: Copy JAR file to deployment directory
+      copy:
+        src: /home/ec2-user/program6/maven-example/target/maven-example-1.0-SNAPSHOT.jar
+        dest: /home/ec2-user/program8/deploy/maven-example-1.0-SNAPSHOT.jar
+        mode: '0755'
